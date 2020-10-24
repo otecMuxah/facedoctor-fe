@@ -1,0 +1,15 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+table {
+  width: 100%;
+}
+
+:host {
+  background-color: rgb(66, 66, 66);
+}
+
+::ng-deep {
+  .mat-tab-label, .mat-tab-link {
+    color: rgba(0,0,0,.87);
+  }
+}

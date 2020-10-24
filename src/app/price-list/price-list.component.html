@@ -1,0 +1,23 @@
+<mat-tab-group mat-align-tabs="start" animationDuration="200ms">
+  <mat-tab label="{{tabName}}" *ngFor="let tabName of tabNames">
+    <table mat-table [dataSource]="groupedPrice[tabName]">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Название </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef> Описание </th>
+        <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+      </ng-container>
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef> Цена </th>
+        <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </mat-tab>
+</mat-tab-group>
+
+
