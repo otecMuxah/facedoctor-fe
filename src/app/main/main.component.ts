@@ -1,18 +1,17 @@
-import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
-import {MediaMatcher} from '@angular/cdk/layout';
-import {ActivatedRoute, ActivationEnd, Router} from '@angular/router';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { MediaMatcher } from '@angular/cdk/layout';
+import { ActivationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'fd-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss']
+  styleUrls: ['./main.component.scss'],
 })
 export class MainComponent implements OnInit {
-
   title = 'facedoctor-fe';
   mobileQuery: MediaQueryList;
   private mobileQueryListener: () => void;
-  fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
+  fillerNav = Array.from({ length: 50 }, (_, i) => `Nav Item ${i + 1}`);
 
   constructor(
     changeDetectorRef: ChangeDetectorRef,
@@ -24,7 +23,6 @@ export class MainComponent implements OnInit {
     this.mobileQuery.addListener(this.mobileQueryListener);
   }
 
-
   ngOnInit(): void {
     this.router.events.subscribe((val) => {
       if (val instanceof ActivationEnd) {
@@ -33,5 +31,4 @@ export class MainComponent implements OnInit {
       }
     });
   }
-
 }
