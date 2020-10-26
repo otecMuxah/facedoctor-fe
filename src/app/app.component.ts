@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {ChangeDetectorRef, Component} from '@angular/core';
+import {MediaMatcher} from '@angular/cdk/layout';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'facedoctor-fe';
 }
